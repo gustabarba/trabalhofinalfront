@@ -14,8 +14,7 @@ function obterClientes (callback){
                 }  
             }catch(e){
                 imprimirErro();
-            }
-                        
+            }        
         }
     };
 }
@@ -33,7 +32,7 @@ function imprimirResultado(resultado){
                 <div class="card-body">
                 <h5 class="card-title">${cliente.name.first} ${cliente.name.last}</h5>
                 <p class="card-text">${cliente.location.timezone.description}</p>
-                <p class="card-text"><a href="clientes.html" class="btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">Ver cliente</a></p>
+                <p class="card-text"><a href="clientes.html" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">Ver cliente</a></p>
                 </div>
             </div>
             </div>
