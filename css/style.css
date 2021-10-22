@@ -12,6 +12,19 @@
 
 .container-foto {
     max-height: 100%;
-
     overflow: hidden;
+}
+
+#lista-clientes {
+    max-width: 350px;
+}
+
+.cliente.card {
+    overflow: hidden;
+}
+
+@media (min-width: 800px) {
+    #lista-clientes {
+        max-width: 700px;
+    }
 }

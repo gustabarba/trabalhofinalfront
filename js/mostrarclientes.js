@@ -21,22 +21,22 @@ function obterClientes(num, callback) {
         });
 }
 function imprimirClientes(resultado) {
-    let container = document.querySelector("#grid-clientes");
+    let container = document.querySelector("#lista-clientes");
     let impressao = "";
     resultado.results.forEach((cliente) => {
         impressao += `
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="cliente card mb-3" >
             <div class="row g-0">
-            <div class="container-foto col-sm-4">
-                <img src="${cliente.picture.large}" class="foto-cliente img-fluid rounded" alt="...">
-            </div>
-            <div class="col">
-                <div class="card-body">
-                <h5 class="card-title">${cliente.name.first} ${cliente.name.last}</h5>
-                <p class="card-text">${cliente.location.timezone.description}</p>
-                <p class="card-text"><a href="clientes.html" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">Ver cliente</a></p>
+                <div class="container-foto col-md-4">
+                    <img src="${cliente.picture.large}" class="foto-cliente img-fluid" alt="...">
                 </div>
-            </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">${cliente.name.first} ${cliente.name.last}</h5>
+                    <p class="card-text">${cliente.location.timezone.description}</p>
+                    <p class="card-text"><a href="clientes.html" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">Ver cliente</a></p>
+                    </div>
+                </div>
             </div>
         </div> 
         `;
