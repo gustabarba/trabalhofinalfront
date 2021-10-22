@@ -17,12 +17,6 @@
 .card {
     overflow: hidden;
 }
-/* #lista-clientes {
-    max-width: 400px;
+#lista-clientes {
+    margin: 50px auto;
 }
-
-@media (min-width: 800px) {
-    #lista-clientes {
-        max-width: 700px;
-    }
-} */
