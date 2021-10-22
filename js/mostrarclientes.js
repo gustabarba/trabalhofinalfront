@@ -1,24 +1,17 @@
 
-function obterClientes (callback){	
-    let pedido = new XMLHttpRequest();
-    let url = "https://randomuser.me/api/?results=5";
-    pedido.open("GET", url, true);
-    pedido.send();
-    pedido.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            try{
-                if(this.status == 200){
-                    callback(JSON.parse(this.responseText));
-                }else{
-                    throw new Error('deu ruim');
-                }  
-            }catch(e){
-                imprimirErro();
-            }        
-        }
-    };
+function obterClientes(num, callback){	
+    let url = "https://randomuser.me/api/";
+    let qtd = num;
+    fetch(`${url}?results=${qtd}`).then(resposta => resposta.json())
+    .then(resultado => {
+        callback(resultado);
+    })
+    .catch(erro => {
+        let recipiente = document.querySelector('#lista-clientes');
+        imprimirErro(recipiente, 'Não foi possível carregar a lista de clientes. Verifique sua conexão com a internet.');
+    });
 }
-function imprimirResultado(resultado){
+function imprimirClientes(resultado){
     let container = document.querySelector('#grid-clientes');
     let impressao = "";
     resultado.results.forEach(cliente => {
@@ -41,13 +34,10 @@ function imprimirResultado(resultado){
     });
     container.innerHTML = impressao;
 }
-function imprimirErro(){
-    let container = document.querySelector('#lista-clientes');
-    container.innerHTML = `
-    <div class="alert alert-danger" role="alert">
-        Não foi possível carregar a lista de clientes. Verifique sua conexão com a internet.
-    </div>
+function imprimirErro(recipiente, mensagem){
+    recipiente.innerHTML = `
+    <div class="alert alert-danger" role="alert">${mensagem}</div>
     `;
 }
-obterClientes(imprimirResultado);
+obterClientes(5, imprimirClientes);
 
