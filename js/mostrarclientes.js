@@ -27,10 +27,10 @@ function imprimirClientes(resultado) {
         impressao += `
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
-            <div class="col-md-4">
+            <div class="container-foto col-sm-4">
                 <img src="${cliente.picture.large}" class="foto-cliente img-fluid rounded" alt="...">
             </div>
-            <div class="col-md-8">
+            <div class="col">
                 <div class="card-body">
                 <h5 class="card-title">${cliente.name.first} ${cliente.name.last}</h5>
                 <p class="card-text">${cliente.location.timezone.description}</p>

@@ -1,9 +1,17 @@
-.tema-base, .tema-base.btn:hover{
-    background-color: #40026C;
-    border-color: #40026C;
+.tema-base,
+.tema-base.btn:hover {
+    background-color: #40026c;
+    border-color: #40026c;
 }
 
-.foto-cliente{
-    min-width: 100%;
-    min-height: auto;
+.foto-cliente {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-foto {
+    max-height: 100%;
+
+    overflow: hidden;
 }
