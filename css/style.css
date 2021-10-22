@@ -14,17 +14,15 @@
     max-height: 100%;
     overflow: hidden;
 }
-
-#lista-clientes {
-    max-width: 350px;
-}
-
-.cliente.card {
+.card {
     overflow: hidden;
+}
+/* #lista-clientes {
+    max-width: 400px;
 }
 
 @media (min-width: 800px) {
     #lista-clientes {
         max-width: 700px;
     }
-}
+} */

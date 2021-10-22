@@ -23,14 +23,15 @@ function obterClientes(num, callback) {
 function imprimirClientes(resultado) {
     let container = document.querySelector("#lista-clientes");
     let impressao = "";
+
     resultado.results.forEach((cliente) => {
         impressao += `
-        <div class="cliente card mb-3" >
+        <div class="cliente card mb-3 col-12" >
             <div class="row g-0">
-                <div class="container-foto col-md-4">
+                <div class="container-foto col-12 col-sm-4 col-xl-3">
                     <img src="${cliente.picture.large}" class="foto-cliente img-fluid" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-12 col-sm-8 col-xl-9">
                     <div class="card-body">
                     <h5 class="card-title">${cliente.name.first} ${cliente.name.last}</h5>
                     <p class="card-text">${cliente.location.timezone.description}</p>
