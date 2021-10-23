@@ -1,7 +1,26 @@
 .tema-base,
-.tema-base.btn:hover {
+a.tema-base.btn:hover {
     background-color: #40026c;
     border-color: #40026c;
+}
+.tema-base.navbar form input,
+.tema-base.navbar form button {
+    background-color: #40026c;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.tema-base.navbar input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.3);
+}
+
+.tema-base.navbar input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tema-base.navbar form button:hover {
+    background-color: #fff;
+    color: #40026c;
 }
 
 .foto-cliente {
