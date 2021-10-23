@@ -10,6 +10,13 @@
     object-fit: cover;
 }
 
+.card-text,
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .container-foto {
     max-height: 100%;
 }
