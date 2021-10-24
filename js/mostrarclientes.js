@@ -45,9 +45,10 @@ function imprimirClientes(resultado) {
                     }</p>
                     <p class="card-text">
                     <form method="get" action="cliente.html" class="inline">
-                        <input type="hidden" name="usuario" value="${JSON.stringify(
-                            cliente
-                        ).replace(/"/g, "&quot;")}">
+                        <input type="hidden" name="u" value="${CryptoJS.AES.encrypt(
+                            JSON.stringify(cliente),
+                            "1234"
+                        ).toString()}">
                         <button type="submit" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button">Ver cliente
                         </button>
                     </form>             

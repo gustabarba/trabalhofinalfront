@@ -11,6 +11,8 @@ function obterValorParametroGET(nomeParametro) {
     return result;
 }
 function imprimirUsuario(cliente) {
+    cliente = CryptoJS.AES.decrypt(cliente, "1234");
+    cliente = cliente.toString(CryptoJS.enc.Utf8);
     cliente = JSON.parse(cliente);
     let container = document.querySelector("#detalhes-cliente");
     let impressao = "";
@@ -68,4 +70,4 @@ function imprimirUsuario(cliente) {
     `;
     container.innerHTML = impressao;
 }
-imprimirUsuario(obterValorParametroGET("usuario"));
+imprimirUsuario(obterValorParametroGET("u"));
