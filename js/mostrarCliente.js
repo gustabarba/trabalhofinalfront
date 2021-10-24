@@ -15,6 +15,11 @@ function imprimirUsuario(cliente) {
     cliente = cliente.toString(CryptoJS.enc.Utf8);
     cliente = JSON.parse(cliente);
     let container = document.querySelector("#detalhes-cliente");
+    let enderecoSemRua = `  
+        ${cliente.location.city}, 
+        ${cliente.location.state} – 
+        ${cliente.location.country}`;
+    enderecoSemRua = encodeURI(enderecoSemRua);
     let impressao = "";
     impressao += `
     <div class="cliente card col-12" >
@@ -59,11 +64,7 @@ function imprimirUsuario(cliente) {
                 </div>
             </div>
             <div class="card-img-bottom col-12">
-                <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px; background-color:#ddd" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=${
-                    cliente.location.coordinates.latitude
-                },%20${
-        cliente.location.coordinates.longitude
-    }&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px; background-color:#ddd" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=${enderecoSemRua}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
             </div>
         </div>
     </div> 
