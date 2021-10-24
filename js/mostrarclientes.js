@@ -29,9 +29,11 @@ function imprimirClientes(resultado) {
         <div class="cliente card col-12" >
             <div class="row g-0">
                 <div class="container-foto col-12 col-sm-12 col-md-4 col-xl-3">
+                <span class="img-shadow">
                     <img src="${
                         cliente.picture.large
                     }" class="foto-cliente img-fluid" alt="...">
+                    </span>
                 </div>
                 <div class="col-12 col-sm-12 col-md-8 col-xl-9">
                     <div class="card-body">
