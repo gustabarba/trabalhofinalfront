@@ -29,13 +29,27 @@ function imprimirClientes(resultado) {
         <div class="cliente card col-12" >
             <div class="row g-0">
                 <div class="container-foto col-12 col-sm-12 col-md-4 col-xl-3">
-                    <img src="${cliente.picture.large}" class="foto-cliente img-fluid" alt="...">
+                    <img src="${
+                        cliente.picture.large
+                    }" class="foto-cliente img-fluid" alt="...">
                 </div>
                 <div class="col-12 col-sm-12 col-md-8 col-xl-9">
                     <div class="card-body">
-                    <h5 class="card-title">${cliente.name.first} ${cliente.name.last}</h5>
-                    <p class="card-text">${cliente.location.timezone.description}</p>
-                    <p class="card-text"><a href="clientes.html" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">Ver cliente</a></p>
+                    <h5 class="card-title">${cliente.name.first} ${
+            cliente.name.last
+        }</h5>
+                    <p class="card-text">${
+                        cliente.location.timezone.description
+                    }</p>
+                    <p class="card-text">
+                    <form method="get" action="cliente.html" class="inline">
+                        <input type="hidden" name="usuario" value="${JSON.stringify(
+                            cliente
+                        ).replace(/"/g, "&quot;")}">
+                        <button type="submit" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button">Ver cliente
+                        </button>
+                    </form>             
+                    </p>
                     </div>
                 </div>
             </div>
