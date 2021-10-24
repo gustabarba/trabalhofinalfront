@@ -1,4 +1,4 @@
-# trabalhofinalfront
+# Trabalho final de front-end usando Bootstrap
 
 Esse não foi o entregue pelo grupo, fiz por conta própria por falta de coisa melhor pra fazer. 
 
