@@ -1,5 +1,5 @@
 .tema-base,
-#lista-clientes button.tema-base.btn:hover {
+#lista-clientes a.tema-base.btn:hover {
     background-color: #40026c;
     border-color: #40026c;
 }

@@ -44,14 +44,11 @@ function imprimirClientes(resultado) {
                         cliente.location.timezone.description
                     }</p>
                     <p class="card-text">
-                    <form method="get" action="cliente.html" class="inline">
-                        <input type="hidden" name="u" value="${CryptoJS.AES.encrypt(
+                        <a href="./cliente.html?u=${CryptoJS.AES.encrypt(
                             JSON.stringify(cliente),
                             "1234"
-                        ).toString()}">
-                        <button type="submit" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button">Ver cliente
-                        </button>
-                    </form>             
+                        ).toString()}" class="tema-base btn btn-primary btn-sm" tabindex="-1" role="button">Ver cliente
+                        </a>                             
                     </p>
                     </div>
                 </div>
