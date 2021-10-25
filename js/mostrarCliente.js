@@ -11,15 +11,14 @@ function obterValorParametroGET(nomeParametro) {
     return result;
 }
 function imprimirUsuario(cliente) {
-    cliente = CryptoJS.AES.decrypt(cliente, "1234");
-    cliente = cliente.toString(CryptoJS.enc.Utf8);
-    cliente = JSON.parse(cliente);
+    cliente = JSON.parse(
+        CryptoJS.AES.decrypt(cliente, "1234").toString(CryptoJS.enc.Utf8)
+    );
     let container = document.querySelector("#detalhes-cliente");
-    let enderecoSemRua = `  
+    let enderecoSemRua = encodeURI(`  
         ${cliente.location.city}, 
         ${cliente.location.state} – 
-        ${cliente.location.country}`;
-    enderecoSemRua = encodeURI(enderecoSemRua);
+        ${cliente.location.country}`);
     let impressao = "";
     impressao += `
         <div class="cliente card col-12">
